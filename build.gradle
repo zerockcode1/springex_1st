@@ -53,9 +53,23 @@ dependencies {
 
     implementation group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.6'
 
+
+    //JSTL관련
     implementation group: 'jstl', name: 'jstl', version: '1.2'
 
+
+    //log4jdbc 관련
+    implementation group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4.1', version: '1.16'
+
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.32'
+
+    //ModelMapper관련
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.4'
+
+    //Validate 관련
     implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.1.0.Final'
+
 
 }
 

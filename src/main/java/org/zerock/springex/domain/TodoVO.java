@@ -1,16 +1,15 @@
-package org.zerock.springex.dto;
-
+package org.zerock.springex.domain;
 
 import lombok.*;
 
 import java.time.LocalDate;
 
+@Getter
 @ToString
-@Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TodoDTO {
+@Builder
+public class TodoVO {
 
     private Long tno;
 
@@ -18,8 +17,7 @@ public class TodoDTO {
 
     private LocalDate dueDate;
 
-    private boolean finished;
-
     private String writer;
 
+    private boolean finished;
 }
