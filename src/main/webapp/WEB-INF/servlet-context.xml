@@ -8,6 +8,7 @@
         <property name="formatters">
             <set>
                 <bean class="org.zerock.springex.config.LocalDateFormatter"/>
+                <bean class="org.zerock.springex.config.CheckboxFormatter"/>
             </set>
         </property>
     </bean>

@@ -1,3 +1,8 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -43,28 +48,45 @@
                     Featured
                 </div>
                 <div class="card-body">
-                    <form action="/board/register" method="post">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Title</span>
-                            <input type="text" name="title" class="form-control" placeholder="Title">
-                        </div>
 
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Writer</span>
-                            <input type="text" name="writer" class="form-control" placeholder="Writer">
-                        </div>
+    <form action="/todo/register" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Title</span>
+            <input type="text" name="title" class="form-control" placeholder="Title">
+        </div>
 
-                        <div class="input-group">
-                            <span class="input-group-text">Content</span>
-                            <textarea class="form-control" aria-label="With textarea" name="content" rows="4"></textarea>
-                        </div>
-                        <div class="my-4">
-                            <div class="float-end">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="result" class="btn btn-secondary">Reset</button>
-                            </div>
-                        </div>
-                    </form>
+        <div class="input-group mb-3">
+            <span class="input-group-text">DueDate</span>
+            <input type="date" name="dueDate" class="form-control" placeholder="Writer">
+
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Writer</span>
+            <input type="text" name="writer" class="form-control" placeholder="Writer">
+
+        </div>
+
+        <div class="my-4">
+            <div class="float-end">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="result" class="btn btn-secondary">Reset</button>
+            </div>
+        </div>
+    </form>
+<script>
+
+    const serverValidResult = {}
+
+    <c:forEach items="${errors}" var="error">
+
+    serverValidResult['${error.getField()}'] = '${error.defaultMessage}'
+
+    </c:forEach>
+
+    console.log(serverValidResult)
+
+</script>
                 </div>
 
             </div>
@@ -72,7 +94,7 @@
     </div>
 
     <!-- header end -->
-    <div class="row   fixed-bottom">
+    <div class="row   fixed-bottom" style="z-index: -100">
         <footer class="py-1 my-1 ">
             <p class="text-center text-muted">Footer</p>
         </footer>
